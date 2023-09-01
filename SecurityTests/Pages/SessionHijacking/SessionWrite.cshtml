@@ -1,0 +1,14 @@
+﻿@page
+@model SecurityTests.Pages.SessionHijacking.SessionWriteModel
+
+<div class="text-center">
+	<h1 class="display-4">Login</h1>
+	<form method="post" action="">
+		<div class="mt-5 mb-5">
+			<p class="lead">Data written to session: @Model.UserAgent</p>
+		</div>
+		<div class="mb-3">
+			<a asp-page="SessionRead">Read from session</a>
+		</div>
+	</form>
+</div>

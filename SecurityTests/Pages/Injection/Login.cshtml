@@ -1,0 +1,25 @@
+﻿@page
+@model SecurityTests.Pages.Injection.LoginModel
+
+<div class="text-center">
+	<h1 class="display-4">Login</h1>
+	<form method="post" action="">
+		@Html.AntiForgeryToken()
+		<div class="mt-5 mb-5">
+			<p class="lead">@Model.SqlQuery</p>
+		</div>
+		<div class="mb-3">
+			<label for="inputEmail" class="form-label">User name</label>
+			<input type="email" class="form-control" id="inputEmail" name="email"
+				   placeholder="user@example.com">
+		</div>
+		<div class="mb-3">
+			<label for="inputPassword" class="form-label">Password</label>
+			<input type="password" class="form-control" id="inputPassword"
+				   name="password">
+		</div>
+		<div class="mb-3">
+			<input type="submit" class="btn btn-primary mb-3" value="Login">
+		</div>
+	</form>
+</div>

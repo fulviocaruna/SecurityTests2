@@ -1,0 +1,16 @@
+﻿@page
+@model SecurityTests.Pages.SessionHijacking.SessionReadModel
+
+@using Microsoft.AspNetCore.Http
+
+<div class="text-center">
+	<h1 class="display-4">Login</h1>
+	<form method="post" action="">
+		<div class="mt-5 mb-5">
+			<p class="lead">
+				Data read from session:
+				@(HttpContext.Session.GetString("browser") ?? string.Empty)
+			</p>
+		</div>
+	</form>
+</div>

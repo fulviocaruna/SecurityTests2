@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+        for (let i = 0; i < document.featurePolicy.allowedFeatures().length; i++)
+            console.log(document.featurePolicy.allowedFeatures()[i]);
+
+        window.sessionStorage.setItem("cart", "item1");
+  
+        /* Get the documentElement (<html>) to display the page in fullscreen */
+        var elem = document.documentElement;
+
+        /* View in fullscreen */
+        function openFullscreen() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+
+        /* Close fullscreen */
+        function closeFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) { /* Safari */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE11 */
+                document.msExitFullscreen();
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <button onclick="openFullscreen()">Full</button>
+    <button onclick="closeFullscreen()">Normal</button>
+</body>
+</html>

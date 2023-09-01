@@ -1,0 +1,12 @@
+﻿@page
+@model SecurityTestsExternal.Pages.TestSearchPagePostModel
+
+<form method="post" action="https://localhost:7151/XSS/SearchPagePost">
+	<input type="hidden"
+		   name="searchTerm"
+		   value="&lt;script&gt;alert('Hacked!')&lt;/script&gt;">
+</form>
+
+<script>
+	document.forms[0].submit();
+</script>

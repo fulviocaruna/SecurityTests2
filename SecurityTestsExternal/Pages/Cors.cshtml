@@ -1,0 +1,15 @@
+﻿@page
+@model SecurityTestsExternal.Pages.CorsModel
+
+<div class="text-center">
+	<h1 class="display-4">Cross-Origin Resource Sharing</h1>
+	<div id="output"></div>
+</div>
+
+<script>
+	fetch("https://localhost:7151/api/cors")
+		.then(response => response.json())
+		.then(data => {
+			document.getElementById("output").textContent = data;
+		});
+</script>

@@ -1,0 +1,38 @@
+﻿@page
+@model SecurityTests.Pages.XSS.CSPModel
+
+<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<style nonce="19UoXyUC5RHumWo7PyZ/8o9WmaquPDfD49Xx+EEekDI=">
+	.mystyle {
+		font-size: xx-large;
+		color: red
+	}
+</style>
+
+<div class="text-center">
+	<h1 class="display-4">Content Security Policy</h1>
+	<div class="mt-5 mb-5">
+		<img src="https://www.manning.com/assets/manningLogoBlack-4ce2f7a38da67c986590975d7769f389.svg">
+	</div>
+	<div class="mb-3">
+		<p id="timeSpan" class="mystyle">
+			Current time:
+		</p>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.3/underscore-umd.min.js">
+</script>
+
+<script src="~/js/csp.js">
+</script>
+
+<!--
+<script nonce="19UoXyUC5RHumWo7PyZ/8o9WmaquPDfD49Xx+EEekDI=">
+	window.setInterval(
+		"updateTime(new Date().toLocaleTimeString())",
+		1000
+	);
+</script>
+-->
